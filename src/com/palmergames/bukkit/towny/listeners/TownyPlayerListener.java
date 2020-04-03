@@ -562,12 +562,14 @@ public class TownyPlayerListener implements Listener {
 		} catch (NotRegisteredException ignored) {
 		}
 		
-		if (resident != null 
-				&& TownySettings.getTeleportWarmupTime() > 0 
+		if (TownyTimerHandler.isTeleportWarmupRunning() 
+				&& resident != null 
 				&& TownySettings.isMovementCancellingSpawnWarmup() 
 				&& !townyUniverse.getPermissionSource().has(player, PermissionNodes.TOWNY_ADMIN.getNode()) 
-				&& TeleportWarmupTimerTask.hasTeleportRequest(resident))
+				&& TeleportWarmupTimerTask.hasTeleportRequest(resident)) {
 			TeleportWarmupTimerTask.abortTeleportRequest(resident);
+			TownyMessaging.sendErrorMsg(player, TownySettings.getLangString("msg_err_teleport_cancelled"));
+		}
 
 		try {
 			from = cache.getLastLocation();
