@@ -91,4 +91,8 @@ public class TeleportWarmupTimerTask extends TownyTimerTask {
 			}
 		}
 	}
+	
+	public static boolean hasTeleportRequest(Resident resident) {
+		return teleportQueue.contains(resident);
+	}
 }
