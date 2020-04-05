@@ -78,6 +78,10 @@
             <id>placeholderapi</id>
             <url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
+        <repository>
+            <id>tnemc-repository</id>
+            <url>https://dl.bintray.com/theneweconomy/java/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -96,13 +100,12 @@
         <dependency>
             <groupId>net.tnemc</groupId>
             <artifactId>Reserve</artifactId>
-            <version>0.1.4.5</version>
-            <scope>provided</scope>
+            <version>0.1.4.8</version>
         </dependency>
         <dependency>
             <groupId>net.tnemc.tnc</groupId>
             <artifactId>TheNewChat</artifactId>
-            <version>1.5.1.0</version>
+            <version>1.5.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
